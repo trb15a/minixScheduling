@@ -8,9 +8,9 @@
    Brute force prime factorization algorithm. 
    Worst case: BigTheta(2^n) where n is the number of bits in integer being factored 
 */
-int isPrime(int x)
+int isPrime(unsigned long long int x)
 {
-    int f;
+    unsigned long long int f;
 	for (f = 2; f < x-1; f++)
 	{
     	if (x % f == 0)
@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
 	{ /* Child Process */
 		mypid = getpid();
 		//printf("[%d] child\n", mypid);
-		long long int i;
-		for(i = 0; i < 18446744073709000000; i++)
+		unsigned long long int i;
+		for(i = 0; i < 18446744073709000000ULL; i++)
 		{
-			int p = isPrime(i);
+			unsigned long long int p = isPrime(i);
 
 			//For testing:
 			//printf("[%d] child running prime %d = %d\n", mypid, i, p);
